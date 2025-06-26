@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+</head>
+<body>
+    <h3>The list of names:</h3>
+    <ol>
+        {% for name in names %}
+            {% if name == target_name %}
+                <li><span style="color: green; font-weight: bold;">{{ name }} ← your name is on the list!!!</span></li>
+            {% else %}
+                <li>{{ name }}</li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+
+    {% if is_on_the_list == True %}
+        <h3 style="color: green">Congratulations!! You are on the list</h3>
+    {% else %}
+        <h3 style="color: red">Unfortunally, you didn't make it to the final list(((</h3>
+    {% endif %}
+</body>
+</html>
